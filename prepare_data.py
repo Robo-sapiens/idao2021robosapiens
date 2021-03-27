@@ -25,18 +25,8 @@ val_dir = os.path.join(tmp_dir, 'val')
 classes_folders = ['ER', 'NR']
 
 target_classes = [
-    'ER_1',
-    'ER_3',
-    'ER_6',
-    'ER_10',
-    'ER_20',
-    'ER_30',
-    'NR_1',
-    'NR_3',
-    'NR_6',
-    'NR_10',
-    'NR_20',
-    'NR_30',
+    'ER_1', 'ER_3', 'ER_6', 'ER_10', 'ER_20', 'ER_30',
+    'NR_1', 'NR_3', 'NR_6', 'NR_10', 'NR_20', 'NR_30'
 ]
 
 ## Make dirs
