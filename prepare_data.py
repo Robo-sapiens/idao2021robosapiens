@@ -11,8 +11,8 @@ from utils.parsing import parse_class_from_filename
 dataset_root = os.path.join(os.getcwd(), 'idao_dataset')
 
 train_source = os.path.join(dataset_root, 'train')
-public_test_dir = os.path.join(dataset_root, 'public_test')
-private_test_dir = os.path.join(dataset_root, 'private_test')
+public_test_source = os.path.join(dataset_root, 'public_test')
+private_test_source = os.path.join(dataset_root, 'private_test')
 
 tmp_dir = os.path.join(os.getcwd(), 'tmp')
 
@@ -60,9 +60,10 @@ for folder_name in classes_folders:
         )
 
 # Tests
-shutil.copytree(public_test_dir,
-                    os.path.join(tmp_dir, 'unknown_public'))
+shutil.copytree(public_test_source,
+                    os.path.join(tmp_dir, 'test', 'unknown'),
+                    dirs_exist_ok=False)
 
-shutil.copytree(private_test_dir,
-                    os.path.join(tmp_dir, 'unknown_private'))
-
+shutil.copytree(private_test_source,
+                    os.path.join(tmp_dir, 'test', 'unknown'),
+                    dirs_exist_ok=True)

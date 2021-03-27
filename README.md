@@ -22,6 +22,7 @@
 ## Vocabulary
 
 **NR** - nuclear recoils
+
 **ER** - electron recoils
 
 ## Team
