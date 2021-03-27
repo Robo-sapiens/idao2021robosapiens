@@ -6,6 +6,8 @@
 
 2. tar -xvf track_1.tar
 
+3. python3 prepare_data.py
+
 ## Dataset structure
 
 **private test**

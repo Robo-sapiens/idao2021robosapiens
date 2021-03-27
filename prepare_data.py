@@ -8,9 +8,16 @@ from utils.parsing import parse_class_from_filename
 
 ## Paths
 
-data_root = os.path.join(os.getcwd(), 'idao_dataset', 'train')
-train_dir = os.path.join(os.getcwd(), 'tmp', 'train')
-val_dir = os.path.join(os.getcwd(), 'tmp', 'val')
+dataset_root = os.path.join(os.getcwd(), 'idao_dataset')
+
+train_source = os.path.join(dataset_root, 'train')
+public_test_dir = os.path.join(dataset_root, 'public_test')
+private_test_dir = os.path.join(dataset_root, 'private_test')
+
+tmp_dir = os.path.join(os.getcwd(), 'tmp')
+
+train_dir = os.path.join(tmp_dir, 'train')
+val_dir = os.path.join(tmp_dir, 'val')
 
 ## Classes
 
@@ -39,8 +46,9 @@ for dir_name in [train_dir, val_dir]:
 
 ## Copy files
 
+# Classes
 for folder_name in classes_folders:
-    source_dir = os.path.join(data_root, folder_name)
+    source_dir = os.path.join(train_source, folder_name)
     for i, filename in enumerate(tqdm(os.listdir(source_dir))):
         if i % 6 != 0:
             dest_dir = os.path.join(train_dir)
@@ -50,3 +58,11 @@ for folder_name in classes_folders:
             os.path.join(source_dir, filename),
             os.path.join(dest_dir, parse_class_from_filename(filename))
         )
+
+# Tests
+shutil.copytree(public_test_dir,
+                    os.path.join(tmp_dir, 'unknown_public'))
+
+shutil.copytree(private_test_dir,
+                    os.path.join(tmp_dir, 'unknown_private'))
+
