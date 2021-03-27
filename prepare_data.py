@@ -24,18 +24,8 @@ val_dir = os.path.join(tmp_dir, 'val')
 classes_folders = ['ER', 'NR']
 
 target_classes = [
-    'ER_1',
-    'ER_3',
-    'ER_6',
-    'ER_10',
-    'ER_20',
-    'ER_30',
-    'NR_1',
-    'NR_3',
-    'NR_6',
-    'NR_10',
-    'NR_20',
-    'NR_30',
+    'ER_1', 'ER_3', 'ER_6', 'ER_10', 'ER_20', 'ER_30',
+    'NR_1', 'NR_3', 'NR_6', 'NR_10', 'NR_20', 'NR_30'
 ]
 
 ## Make dirs
@@ -61,9 +51,9 @@ for folder_name in classes_folders:
 
 # Tests
 shutil.copytree(public_test_source,
-                    os.path.join(tmp_dir, 'test', 'unknown'),
-                    dirs_exist_ok=False)
+                os.path.join(tmp_dir, 'test', 'unknown'),
+                dirs_exist_ok=False)
 
 shutil.copytree(private_test_source,
-                    os.path.join(tmp_dir, 'test', 'unknown'),
-                    dirs_exist_ok=True)
+                os.path.join(tmp_dir, 'test', 'unknown'),
+                dirs_exist_ok=True)

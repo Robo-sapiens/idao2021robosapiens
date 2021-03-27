@@ -10,14 +10,17 @@
 
 ## Dataset structure
 
-**private test**
-
-**public test**
-
-**train**
-
-- ER
-- NR
+```
+.. idao_dataset::
+.
++-- private test
+|
++-- public test
+|
++-- train
+    +-- ER
+    +-- NR
+```
 
 ## Vocabulary
 
