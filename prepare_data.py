@@ -4,7 +4,7 @@ import os
 import copy
 import shutil
 from tqdm import tqdm
-import re
+from utils.parsing import parse_class_from_filename
 
 ## Paths
 
@@ -36,14 +36,6 @@ target_classes = [
 for dir_name in [train_dir, val_dir]:
     for class_name in target_classes:
         os.makedirs(os.path.join(dir_name, class_name), exist_ok=True)
-
-def parse_class_from_filename(filename):
-    match = re.search(r'(E|N)+R_\d+', filename)
-    return match[0]
-
-def parse_angle_from_filename(filename):
-    match = re.search(r'-*[\d.]+', filename)
-    return match[0]
 
 ## Copy files
 
