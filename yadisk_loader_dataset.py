@@ -1,8 +1,11 @@
 #Usage: ./yadisk_loader_dataset.py https://disk.yandex.ru/d/IC_vZbCcsEt03g?w=1"
 
-import os, sys, json
-import zipfile
+import json
+import os
+import sys
 import urllib.parse as ul
+import zipfile
+import tarfile
 
 sys.argv.append('.') if len(sys.argv) == 2 else None
 
@@ -21,3 +24,11 @@ with zipfile.ZipFile(filename, 'r') as zip_ref:
 files = [f for f in os.listdir("First stage/")]
 for f in files:
     os.rename(f"First stage/{f}", f"{f}")
+
+os.mkdir("data")
+
+tar_balls = [f for f in os.listdir(".") if os.path.isfile(f) and tarfile.is_tarfile(f)]
+for tar_ball in tar_balls:
+    with tarfile.open(tar_ball, "r") as tar:
+        tar.extractall("data")
+
