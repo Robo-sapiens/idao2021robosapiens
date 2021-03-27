@@ -5,6 +5,7 @@ import copy
 import shutil
 from tqdm import tqdm
 from utils.parsing import parse_class_from_filename
+from distutils.dir_util import copy_tree
 
 ## Paths
 
@@ -51,9 +52,10 @@ for folder_name in classes_folders:
 
 # Tests
 shutil.copytree(public_test_source,
-                os.path.join(tmp_dir, 'test', 'unknown'),
-                dirs_exist_ok=False)
+                os.path.join(tmp_dir, 'test', 'unknown'))
 
-shutil.copytree(private_test_source,
-                os.path.join(tmp_dir, 'test', 'unknown'),
-                dirs_exist_ok=True)
+#
+# shutil.copytree(private_test_source,
+#                 os.path.join(tmp_dir, 'test', 'unknown'))
+
+copy_tree(private_test_source, os.path.join(tmp_dir, 'test', 'unknown'))
