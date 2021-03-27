@@ -8,7 +8,7 @@ from utils.parsing import parse_class_from_filename
 
 ## Paths
 
-dataset_root = os.path.join(os.getcwd(), 'idao_dataset')
+dataset_root = os.path.join(os.getcwd(), 'data', 'idao_dataset')
 
 train_source = os.path.join(dataset_root, 'train')
 public_test_dir = os.path.join(dataset_root, 'public_test')
