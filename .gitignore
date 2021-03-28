@@ -1,6 +1,8 @@
 track1_predictions_example.csv
 .ipynb_checkpoints
-idao_dataset
+data
 tmp
 __pycache__
 submission.csv
+wget-log
+*.zip

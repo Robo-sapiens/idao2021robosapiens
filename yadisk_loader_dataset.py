@@ -1,4 +1,6 @@
-#Usage: ./yadisk_loader_dataset.py https://disk.yandex.ru/d/IC_vZbCcsEt03g?w=1"
+#!/usr/bin/python3
+
+# Usage: ./yadisk_loader_dataset.py https://disk.yandex.ru/d/IC_vZbCcsEt03g?w=1"
 
 import json
 import os
@@ -16,7 +18,6 @@ res = os.popen('wget -qO - {}{}'.format(base_url, url)).read()
 json_res = json.loads(res)
 filename = ul.parse_qs(ul.urlparse(json_res['href']).query)['filename'][0]
 os.system("wget '{}' -P '{}' -O '{}'".format(json_res['href'], folder, filename))
-# os.system("wget '{}'".format(json_res['href']))
 
 with zipfile.ZipFile(filename, 'r') as zip_ref:
     zip_ref.extractall(".")
@@ -31,4 +32,3 @@ tar_balls = [f for f in os.listdir(".") if os.path.isfile(f) and tarfile.is_tarf
 for tar_ball in tar_balls:
     with tarfile.open(tar_ball, "r") as tar:
         tar.extractall("data")
-

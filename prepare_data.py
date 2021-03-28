@@ -9,7 +9,7 @@ from distutils.dir_util import copy_tree
 
 ## Paths
 
-dataset_root = os.path.join(os.getcwd(), 'data', 'idao_dataset')
+dataset_root = os.path.join(os.getcwd(), 'data')
 
 train_source = os.path.join(dataset_root, 'train')
 public_test_source = os.path.join(dataset_root, 'public_test')
@@ -51,11 +51,8 @@ for folder_name in classes_folders:
         )
 
 # Tests
-shutil.copytree(public_test_source,
-                os.path.join(tmp_dir, 'test', 'unknown'))
+copy_tree(public_test_source,
+          os.path.join(tmp_dir, 'test', 'unknown'))
 
-#
-# shutil.copytree(private_test_source,
-#                 os.path.join(tmp_dir, 'test', 'unknown'))
-
-copy_tree(private_test_source, os.path.join(tmp_dir, 'test', 'unknown'))
+copy_tree(private_test_source,
+          os.path.join(tmp_dir, 'test', 'unknown'))

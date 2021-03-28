@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Go to IDAO contest and download dataset ***track_1.tar*** to this repo's root
+1. Go to IDAO contest and download dataset, then put the data into folder data of repo's root
 
 2. tar -xvf track_1.tar
 
@@ -11,8 +11,8 @@
 ## Dataset structure
 
 ```
-.. idao_dataset::
-.
+.idao_dataset
+|
 +-- private test
 |
 +-- public test
